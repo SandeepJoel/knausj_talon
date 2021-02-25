@@ -36,7 +36,7 @@ inside (squares | list):
 	key(left)
 inside (bracket | braces): 
 	insert("{}") 
-	key(left)
+	key(left)''
 inside percent: 
 	insert("%%") 
 	key(left)
@@ -58,4 +58,3 @@ percent that:
 quote that:
     text = edit.selected_text()
     user.paste('"{text}"')
-

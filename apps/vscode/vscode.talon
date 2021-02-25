@@ -1,4 +1,4 @@
-#custom vscode commands go here
+
 app: vscode
 -
 tag(): user.find_and_replace
@@ -50,7 +50,7 @@ action(user.multi_cursor_select_fewer_occurrences): user.vscode("Cursor Undo")
 action(user.multi_cursor_select_more_occurrences): user.vscode("Add Selection To Next Find Match")
 #multiple_cursor.py support end
 
-please [<user.text>]: 
+reveal [<user.text>]: 
   user.vscode("Show All Commands")
   insert(user.text or "")
 
@@ -137,11 +137,19 @@ go last mark: user.vscode("Bookmarks: Jump to Previous")
 # Folding
 fold that: user.vscode("editor.fold")
 unfold that: user.vscode("editor.unfold")
-fold those: user.vscode("editor.foldAllMarkerRegions")
-unfold those: user.vscode("editor.unfoldRecursively")
+# fold those: user.vscode("editor.foldAllMarkerRegions")
+# unfold those: user.vscode("editor.unfoldRecursively")
 fold all: user.vscode("editor.foldAll")
 unfold all: user.vscode("editor.unfoldAll")
 fold comments: user.vscode("editor.foldAllBlockComments")
+fold one: key(cmd-k cmd-1)
+fold two: key(cmd-k cmd-2)
+fold three: key(cmd-k cmd-3)
+fold four: key(cmd-k cmd-4)
+fold five: key(cmd-k cmd-5)
+fold six: key(cmd-k cmd-6)
+fold seven: key(cmd-k cmd-7)
+fold eight: key(cmd-k cmd-8)
 
 # Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
 git branch: user.vscode("git.branchFrom")
@@ -196,4 +204,24 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 select less: user.vscode("editor.action.smartSelect.shrink")
 select (more|this): user.vscode("editor.action.smartSelect.expand")
   
-  
+mark that: key(cmd-alt-k)
+mark list: key(cmd-alt-m)
+mark next: key(cmd-alt-.)
+mark prev: key(cmd-alt-,)
+# mark delete: key(cmd-alt--)
+  # the below command will delete all bookmarks from all files
+mark delete: key(cmd-alt-=) 
+comment: key(cmd-/)
+project: key(cmd-alt-p)
+add log: key(ctrl-alt-l)
+tab (open | new): key(cmd-n)
+
+meta: key(alt-/)
+sel meta: key(alt-shift-/)
+sel top: key(ctrl-o)
+sel line: key(ctrl-l)
+(add | had) (curser | cursor): key(cmd-d)
+sel reverse: key(alt-a)
+go middle: key(alt-m)
+go top: key(alt-t)
+go bottom: key(alt-b)

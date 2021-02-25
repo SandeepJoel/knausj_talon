@@ -22,17 +22,17 @@ action(browser.focus_address):
 	
 #action(browser.focus_page):
 
-action(browser.focus_search):
+,action(browser.focus_search):
 	browser.focus_address()
 
 action(browser.go_blank):
 	key(cmd-n)
 	
 action(browser.go_back):
-	key(cmd-[)
+	key(cmd-left)
 
 action(browser.go_forward):
-	key(cmd-])
+	key(cmd-right)
 	
 action(browser.go_home):
 	key(cmd-shift-h)
@@ -66,3 +66,14 @@ action(browser.submit_form):
 
 action(browser.toggle_dev_tools):
 	key(cmd-alt-i)
+
+clean that: key(cmd-k)
+# chrome debugger
+go next: key(cmd-')
+go in: key(cmd-;)
+go out: key(cmd-shift-;)
+go start: key(cmd-\)
+tab left: key(cmd-[)
+tab right: key(cmd-])
+inspect: key(cmd-shift-c)
+break stop: key(cmd-f8)

@@ -4,22 +4,22 @@ find it:
 next one:
     edit.find_next()
 
-go word left:
+(go word left | draw):
     edit.word_left()
 
-go word right:
+(go word right | spring):
     edit.word_right()
 
-go left:
+left:
     edit.left()
 
-go right:
+right:
     edit.right()
 
-go up:
+top:
     edit.up()
 
-go down:
+down:
     edit.down()
 
 go line start:
@@ -48,43 +48,43 @@ go page up:
     edit.page_up()
 
 # selecting
-select line:
+(sel | select) line:
     edit.select_line()
 
-select all:
+(sel | select) all:
     edit.select_all()
 
-select left:
+(sel | select) left:
     edit.extend_left()
 
-select right:
+(sel | select) right:
     edit.extend_right()
 
-select up:
+(sel | select) up:
     edit.extend_line_up()
 
-select down:
+(sel | select) down:
     edit.extend_line_down()
 
-select word:
+(sel | select) word:
     edit.select_word()
 
-select word left:
+(sel | select) word left:
     edit.extend_word_left()
 
-select word right:
+(sel | select) word right:
     edit.extend_word_right()
 
-select way left:
+(sel | select) way left:
     edit.extend_line_start()
 
-select way right:
+(sel | select) way right:
     edit.extend_line_end()
 
-select way up:
+(sel | select) way up:
     edit.extend_file_start()
 
-select way down:
+(sel | select) way down:
     edit.extend_file_end()
 
 # editing
@@ -112,14 +112,14 @@ clear down:
     edit.extend_line_down()
     edit.delete()
 
-clear word:
+clear:
     edit.delete_word()
 
-clear word left:
+(clear word left | ditch):
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+(clear word right | swallow):
     edit.extend_word_right()
     edit.delete()
 
