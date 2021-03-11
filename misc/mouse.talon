@@ -56,6 +56,8 @@ wheel down here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_down()
 wheel tiny [down]: mouse_scroll(20)
+nose: mouse_scroll(-400)
+soap: mouse_scroll(400)
 wheel tiny [down] here:
     user.mouse_move_center_active_window()
     mouse_scroll(20)

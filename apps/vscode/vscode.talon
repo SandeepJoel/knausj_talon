@@ -202,26 +202,39 @@ copy line up: user.vscode("editor.action.copyLinesUpAction")
 
 #Expand/Shrink AST Selection
 select less: user.vscode("editor.action.smartSelect.shrink")
-select (more|this): user.vscode("editor.action.smartSelect.expand")
+select more: user.vscode("editor.action.smartSelect.expand")
   
 mark that: key(cmd-alt-k)
 mark list: key(cmd-alt-m)
 mark next: key(cmd-alt-.)
 mark prev: key(cmd-alt-,)
-# mark delete: key(cmd-alt--)
-  # the below command will delete all bookmarks from all files
+
+ # the below command will delete all bookmarks from all files
 mark delete: key(cmd-alt-=) 
 comment: key(cmd-/)
 project: key(cmd-alt-p)
 add log: key(ctrl-alt-l)
+google: key(ctrl-alt-g)
 tab (open | new): key(cmd-n)
 
 meta: key(alt-/)
 sel meta: key(alt-shift-/)
 sel top: key(ctrl-o)
 sel line: key(ctrl-l)
-(add | had) (curser | cursor): key(cmd-d)
-sel reverse: key(alt-a)
+(curser | cursor): key(cmd-d)
+sel flip: key(alt-a)
 go middle: key(alt-m)
 go top: key(alt-t)
 go bottom: key(alt-b)
+
+# debugger
+# clean that: key(cmd-k)
+break next: key(fn-f10)
+break in: key(fn-f11)
+break out: key(fn-shift-f11)
+break big: key(fn-f5)
+break stop: key(shift-fn-f5)
+break restart: key(cmd-shift-fn-f5)
+show result: key(cmd-shift-u)
+# code run
+file big: key(ctrl-alt-n)

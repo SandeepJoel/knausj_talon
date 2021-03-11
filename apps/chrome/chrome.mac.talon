@@ -22,7 +22,7 @@ action(browser.focus_address):
 	
 #action(browser.focus_page):
 
-,action(browser.focus_search):
+action(browser.focus_search):
 	browser.focus_address()
 
 action(browser.go_blank):
@@ -67,13 +67,20 @@ action(browser.submit_form):
 action(browser.toggle_dev_tools):
 	key(cmd-alt-i)
 
+hunt this: key(cmd-f)
+file hunt: key(cmd-p)
+google that: key(alt-q)
+youtube that: key(alt-s)
+add (curser | cursor): key(fn-f7)
+
+# debugger
 clean that: key(cmd-k)
-# chrome debugger
-go next: key(cmd-')
-go in: key(cmd-;)
-go out: key(cmd-shift-;)
-go start: key(cmd-\)
+# run that: key(ctrl-g)
+break next: key(cmd-')
+break in: key(cmd-;)
+break out: key(cmd-shift-;)
+break big: key(cmd-\)
+break stop: key(cmd-f8)
 tab left: key(cmd-[)
 tab right: key(cmd-])
 inspect: key(cmd-shift-c)
-break stop: key(cmd-f8)

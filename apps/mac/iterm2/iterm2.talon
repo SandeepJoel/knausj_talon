@@ -22,7 +22,7 @@ action(app.window_open):
   key(cmd-n)
 kill that:
   key(ctrl-c)
-rerun search:
+search:
   key(ctrl-r)
 run last:
   key(up)
@@ -40,9 +40,12 @@ slap: key(ctrl--)
 clear: key(ctrl-u)
 redo: key(ctrl-y)
 clean that: key(cmd-k)
-scroll up: key(cmd-up)
-scroll down: key(cmd-down)
+# scroll up: key(cmd-up)
+# scroll down: key(cmd-down)
 go in: "cd ./\t"
 go out: "cd ./../"
 list: "ls\n"
 split down: key(cmd-shift-d)
+hunt this: key(cmd-f)
+north: mouse_scroll(-900)
+south: mouse_scroll(900)

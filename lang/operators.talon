@@ -9,7 +9,7 @@ op arrow: user.code_operator_structure_dereference()
 op lambda: user.code_operator_lambda()
 
 #subscript
-op subscript: user.code_operator_subscript()
+op matrix: user.code_operator_subscript()
 
 #assignment
 op (equals | assign): user.code_operator_assignment()

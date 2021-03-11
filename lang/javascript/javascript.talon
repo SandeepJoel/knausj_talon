@@ -23,12 +23,14 @@ action(user.code_type_dictionary):
   key(left)
 
 action(user.code_state_if):
-  insert("if ()")
-  key(left)
+  insert("if")
+  sleep(100ms)
+  key(tab)
 
 action(user.code_state_else_if):
-  insert(" else if ()")
-  key(left)
+  insert("else if")
+  sleep(100ms)
+  key(tab)
 
 action(user.code_state_else):
   insert(" else {}")
@@ -41,19 +43,22 @@ action(user.code_block):
 action(user.code_self): "this"
 
 action(user.code_state_while):
-  insert("while ()")
-  key(left)
+  insert("while")
+  sleep(100ms)
+  key(tab)
 
 action(user.code_state_return):
   insert("return ")
 
 action(user.code_state_for):
-  insert("for ()")
-  key(left)
+  insert("for")
+  sleep(100ms)
+  key(tab)
 
 action(user.code_state_switch):
-  insert("switch ()")
-  key(left)
+  insert("switch")
+  sleep(100ms)
+  key(tab)
 
 action(user.code_state_case): "case :"
 
@@ -65,7 +70,10 @@ action(user.code_from_import):
   insert(" from  \"\"")
   key(left)
 
-action(user.code_type_class): "class "
+action(user.code_type_class): 
+  insert("class")
+  sleep(100ms)
+  key(tab)
 
 action(user.code_include): ""
 
@@ -151,6 +159,11 @@ state reduce:
   key(left)
 
 state spread: "..."
+
+state function: 
+  insert("function")
+  sleep(100ms)
+  key(tab)
 
 ^funky <user.text>$: user.code_private_function(text)
 ^pro funky <user.text>$: user.code_protected_function(text)

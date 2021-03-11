@@ -2,8 +2,12 @@ tag: browser
 -
 (address | go address | go url): browser.focus_address()
 go home: browser.go_home()
-[go] forward: browser.go_forward()
-go (back | backward): browser.go_back()
+[go] forward: 
+  key(esc)
+  browser.go_forward()
+go (back | backward): 
+  key(esc)
+  browser.go_back()
 
 go private: browser.open_private_window()
 
@@ -12,8 +16,8 @@ bookmark bar: browser.bookmarks_bar()
 bookmark it: browser.bookmark()
 bookmark tabs: browser.bookmark_tabs()
 
-(refresh | reload) it: browser.reload()
-(refresh | reload) it hard: browser.reload_hard()
+(refresh | reload): browser.reload()
+(refresh | reload) hard: browser.reload_hard()
 
 show downloads: browser.show_downloads()
 show extensions: browser.show_extensions()

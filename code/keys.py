@@ -134,7 +134,7 @@ punctuation_words = {
     "back tick": "`",
     "comma": ",",
     "period": ".",
-    "semicolon": ";",
+    "semi": ";",
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",

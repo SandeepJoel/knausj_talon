@@ -16,10 +16,10 @@ left:
 right:
     edit.right()
 
-top:
+pen:      
     edit.up()
-
-down:
+      
+fat:
     edit.down()
 
 go line start:
@@ -28,11 +28,11 @@ go line start:
 go line end:
     edit.line_end()
 
-go way left:
+(go way left | home):
     edit.line_start()
     edit.line_start()
 
-go way right:
+(go way right | end):
     edit.line_end()
 
 go way down:
@@ -41,50 +41,44 @@ go way down:
 go way up:
     edit.file_start()
 
-go page down:
-    edit.page_down()
-
-go page up:
-    edit.page_up()
-
 # selecting
-(sel | select) line:
+sel line:
     edit.select_line()
 
-(sel | select) all:
+sel all:
     edit.select_all()
 
-(sel | select) left:
+sel left:
     edit.extend_left()
 
-(sel | select) right:
+sel right:
     edit.extend_right()
 
-(sel | select) up:
+sel up:
     edit.extend_line_up()
 
-(sel | select) down:
+sel down:
     edit.extend_line_down()
 
-(sel | select) word:
+sel word:
     edit.select_word()
 
-(sel | select) word left:
+(sel word left | kick | cake):
     edit.extend_word_left()
 
-(sel | select) word right:
+(sel word right | plate):
     edit.extend_word_right()
 
-(sel | select) way left:
+sel (way left | home):
     edit.extend_line_start()
 
-(sel | select) way right:
+sel (way right | end):
     edit.extend_line_end()
 
-(sel | select) way up:
+sel way up:
     edit.extend_file_start()
 
-(sel | select) way down:
+sel way down:
     edit.extend_file_end()
 
 # editing
