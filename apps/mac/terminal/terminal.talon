@@ -32,4 +32,6 @@ suspend:
 resume:
   insert("fg")
   key(enter)
-
+location:
+  insert("pwd")
+  key(enter)

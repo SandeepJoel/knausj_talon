@@ -1,5 +1,5 @@
-find it:
-    edit.find()
+# find it:
+    # edit.find()
 
 next one:
     edit.find_next()
@@ -19,7 +19,7 @@ right:
 pen:      
     edit.up()
       
-fat:
+down:
     edit.down()
 
 go line start:

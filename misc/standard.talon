@@ -27,8 +27,6 @@ shoot: key(tab)
 shoot back: key(shift-tab)
 del: key(enter)
 del back: key(shift-enter)
-salt: key(fn-f4)
-salt back: key(shift-fn-f4)
 show menu: key(ctrl-fn-f2)
 padding: 
 	insert("  ") 
@@ -36,3 +34,14 @@ padding:
 # 'slap:
 # 	edit.line_end()
 # 	key(enter)'
+unhide files: key(cmd-shift-.)
+email one: 'joeltheking00000001@gmail.com'
+email two: 'sandeep.joel@freshworks.com'
+email three: 'sjoel@freshworks.com'
+email support: 'support@freshdesk.com'
+freshdesk password: 'Freshdesk@123'
+
+
+
+
+joel password: 'sjUIjo001'

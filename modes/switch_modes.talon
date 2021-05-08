@@ -2,7 +2,7 @@
 mode: dictation
 mode: command
 -
-^dictation mode$:
+^dictate mode$:
     mode.disable("sleep")
     mode.disable("command")
     mode.enable("dictation")

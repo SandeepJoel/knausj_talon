@@ -45,7 +45,15 @@ clean that: key(cmd-k)
 go in: "cd ./\t"
 go out: "cd ./../"
 list: "ls\n"
+yarn: "yarn "
+location: "pwd\n"
+sudo: "sudo "
+cat: "cat "
+alias: "alias "
+go to: "go_to_\t"
+remove everything: "rm -rf "
 split down: key(cmd-shift-d)
+expand: key(cmd-shift-enter)
 hunt this: key(cmd-f)
-north: mouse_scroll(-900)
-south: mouse_scroll(900)
+north: mouse_scroll(-1000)
+south: mouse_scroll(1000)

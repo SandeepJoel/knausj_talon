@@ -24,8 +24,8 @@ show extensions: browser.show_extensions()
 show history: browser.show_history()
 show cache: browser.show_clear_cache()
 
-dev tools: browser.toggle_dev_tools()
-
+salt that: browser.toggle_dev_tools()
+inspect: key(cmd-shift-c)
 #todo - port to apps
 # navigating current page
 # help: key(?)

@@ -1,6 +1,7 @@
 window (new|open): app.window_open()
 window next: app.window_next()
 window last: app.window_previous()
+window large: key(cmd-alt-=)
 window close: app.window_close()
 window quit: key(cmd-q)
 focus <user.running_applications>: user.switcher_focus(running_applications)

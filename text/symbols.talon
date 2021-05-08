@@ -40,9 +40,37 @@ inside (bracket | braces):
 inside percent: 
 	insert("%%") 
 	key(left)
+inside angle: 
+	insert("<>") 
+	key(left)
 inside quotes:
 	insert('""')
-	key(left)
+  key(left)
+tag para:
+  insert('<p></p>')
+  key(left)
+  key(left)
+  key(left)
+  key(left)
+tag break:
+  insert('<br>')
+tag span:
+  insert('<span></span>')
+  key(left)
+  key(left)
+  key(left)
+  key(left)
+  key(left)
+  key(left)
+  key(left)
+tag div:
+  insert('<div></div>')
+  key(left)
+  key(left)
+  key(left)
+  key(left)
+  key(left)
+  key(left)
 angle that: 
     text = edit.selected_text()
     user.paste("<{text}>")
