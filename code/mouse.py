@@ -2,7 +2,19 @@ import os
 import pathlib
 import subprocess
 
-from talon import Context, Module, actions, app, cron, ctrl, clip, imgui, noise, settings, ui
+from talon import (
+    Context,
+    Module,
+    actions,
+    app,
+    cron,
+    ctrl,
+    clip,
+    imgui,
+    noise,
+    settings,
+    ui,
+)
 from talon_plugins import eye_mouse, eye_zoom_mouse, speech
 from talon_plugins.eye_mouse import config, toggle_camera_overlay, toggle_control
 
@@ -13,6 +25,7 @@ click_job = None
 scroll_job = None
 gaze_job = None
 cancel_scroll_on_pop = True
+control_mouse_forced = False
 
 default_cursor = {
     "AppStarting": r"%SystemRoot%\Cursors\aero_working.ani",
@@ -83,7 +96,7 @@ setting_mouse_wheel_down_amount = mod.setting(
 continuous_scoll_mode = ""
 
 
-@imgui.open(x=700, y=0, software=app.platform == "linux")
+@imgui.open(x=700, y=0)
 def gui_wheel(gui: imgui.GUI):
     gui.text("Scroll mode: {}".format(continuous_scoll_mode))
     gui.line()
@@ -203,9 +216,16 @@ class Actions:
         """Starts gaze scroll"""
         global continuous_scoll_mode
         continuous_scoll_mode = "gaze scroll"
+
         start_cursor_scrolling()
         if setting_mouse_hide_mouse_gui.get() == 0:
             gui_wheel.show()
+
+        # enable 'control mouse' if eye tracker is present and not enabled already
+        global control_mouse_forced
+        if eye_mouse.tracker is not None and not config.control_mouse:
+            toggle_control(True)
+            control_mouse_forced = True
 
     def copy_mouse_position():
         """Copy the current mouse position coordinates"""
@@ -335,6 +355,11 @@ def stop_scroll():
 
     if gaze_job:
         cron.cancel(gaze_job)
+
+    global control_mouse_forced
+    if control_mouse_forced and config.control_mouse:
+        toggle_control(False)
+        control_mouse_forced = False
 
     scroll_job = None
     gaze_job = None

@@ -12,8 +12,8 @@
 #word shell: "shell".
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
-north: key(pgup)
-south: key(pgdown)
+north: edit.page_up()
+south: edit.page_down()
 copy that: edit.copy()
 cut that: edit.cut()
 paste that: edit.paste()
