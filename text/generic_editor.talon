@@ -16,7 +16,7 @@ left:
 right:
     edit.right()
 
-pen:      
+up:      
     edit.up()
       
 down:

@@ -5,7 +5,8 @@ tag(): user.file_manager
 
 action(user.file_manager_open_parent):
     key(cmd-up)
-        
+
+go in: key(cmd-down)
 action(user.file_manager_go_forward):
     key("cmd-]")
 
@@ -15,7 +16,7 @@ action(user.file_manager_go_back):
 preferences: key(cmd-,)
 options: key(cmd-j) 
 search: key(cmd-alt-f)
-
+go folder: key(cmd-shift-g)
 # bit of a mouthful, but it's probably not the kind of thing you'd be saying frequently
 sort by none: key(ctrl-alt-cmd-0)
 sort by name: key(ctrl-alt-cmd-1)

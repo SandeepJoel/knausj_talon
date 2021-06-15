@@ -288,7 +288,7 @@ go bottom: key(alt-b)
 toggle scope: key(cmd-shift-\)
 
 # debugger
-# clean that: key(cmd-k)
+by bug: "byebug"
 break next: key(fn-f10)
 break in: key(fn-f11)
 break out: key(fn-shift-f11)

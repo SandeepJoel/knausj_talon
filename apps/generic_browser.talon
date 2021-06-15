@@ -1,6 +1,6 @@
 tag: browser
 -
-(address | go address | go url): browser.focus_address()
+^address$: browser.focus_address()
 go home: browser.go_home()
 [go] forward: 
   key(esc)
