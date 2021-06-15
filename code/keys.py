@@ -134,9 +134,11 @@ punctuation_words = {
     "`": "`",
     ",": ",",  # <== these things
     "back tick": "`",
+    "grave": "`",
     "comma": ",",
     "period": ".",
     "semi": ";",
+    "full stop": ".",    
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",
