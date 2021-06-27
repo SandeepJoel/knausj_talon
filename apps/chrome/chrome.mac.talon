@@ -69,6 +69,7 @@ action(browser.toggle_dev_tools):
 	key(cmd-alt-i)
 
 hunt this: key(cmd-f)
+setting: key(cmd-,)
 reveal: key(cmd-shift-p)
 salt log: key(cmd-alt-j)
 file hunt: key(cmd-p)
