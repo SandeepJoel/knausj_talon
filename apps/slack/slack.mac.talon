@@ -55,8 +55,10 @@ action(user.messaging_upload_file): key(cmd-u)
 ([toggle] mute | unmute): key(m)
 (slack | lack) ([toggle] video): key(v)
 (slack | lack) invite: key(a)
+(slack | lack) huddle: key(cmd-shift-h)
     # Miscellaneous
 (slack | lack) shortcuts: key(cmd-/)
 emote <user.text>: "{text}"
 toggle left sidebar: key(cmd-shift-d)
 toggle right sidebar: key(cmd-.)
+slackbot: "slackbot"

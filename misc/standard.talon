@@ -18,9 +18,10 @@ copy that: edit.copy()
 cut that: edit.cut()
 paste that: edit.paste()
 slap: edit.undo()
-redo that: edit.redo()
+reverse that: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
+spotlight: key(cmd-space)
 wipe: key(backspace)
 pull: key(fn-del)
 shoot: key(tab)
@@ -42,14 +43,10 @@ email one: 'joeltheking00000001@gmail.com'
 email two: 'sandeep.joel@freshworks.com'
 email three: 'sjoel@freshworks.com'
 email support: 'support@freshdesk.com'
-link google: 'https://www.google.com/'
+email manager: 'maya.skumar@freshworks.com'
 full name joel: 'A Sandeep Joel'
 mobile joel: '9445484948'
 mobile thomas: '9841875021'
 address joel: 'No. 51, 12 street, astalakshmi nagar, alapakkam, chennai 116'
 address thomas: '19, Valluavar street, Chinna Porur, Porur - 600116'
 auto thomas: 'TN85K2476'
-number aadhar: '732393621224'
-number second aadhar: '515981656983'
-
-freshdesk password: 'Freshdesk@123'

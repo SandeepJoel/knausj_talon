@@ -96,6 +96,7 @@ file hunt [<user.text>]:
   sleep(50ms)
   insert(text or "")
 file copy path: user.vscode("copyFilePath") 
+
 file create sibling: user.vscode_and_wait("explorer.newFile")
 file create: user.vscode("workbench.action.files.newUntitledFile")
 file rename:
@@ -104,6 +105,9 @@ file rename:
 file move:
 	user.vscode("fileutils.moveFile")
 	sleep(150ms)
+file duplicate:
+	user.vscode("fileutils.duplicateFile")
+	sleep(150ms)
 file open folder: user.vscode("revealFileInOS")
 file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer") 
 save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
@@ -111,9 +115,9 @@ save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
 hint show: user.vscode("editor.action.triggerParameterHints")
-definition show: user.vscode("editor.action.revealDefinition")
-definition peek: user.vscode("editor.action.peekDefinition")
-definition side: user.vscode("editor.action.revealDefinitionAside")
+define show: user.vscode("editor.action.revealDefinition")
+define peek: user.vscode("editor.action.peekDefinition")
+define side: user.vscode("editor.action.revealDefinitionAside")
 references show: user.vscode("editor.action.goToReferences")
 references find: user.vscode("references-view.find")
 format that: user.vscode("editor.action.formatDocument")
@@ -164,6 +168,7 @@ fold five: key(cmd-k cmd-5)
 fold six: key(cmd-k cmd-6)
 fold seven: key(cmd-k cmd-7)
 fold eight: key(cmd-k cmd-8)
+fold nine: key(cmd-k cmd-9)
 
 # Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
 git branch: user.vscode("git.branchFrom")
@@ -261,6 +266,11 @@ install local: user.vscode("workbench.extensions.action.installVSIX")
 
 
 # personalised actions and extensions
+file copy local: user.vscode("copyRelativeFilePath")
+close other tabs: user.vscode("workbench.action.closeOtherEditors")
+close all: user.vscode("workbench.action.closeAllEditors")
+collapse files: user.vscode("workbench.files.action.collapseExplorerFolders") 
+clean that: key(cmd-alt-u)
 salt that: key(fn-f4)
 salt back: key(shift-fn-f4)
 
@@ -282,20 +292,45 @@ sel top: key(ctrl-o)
 sel line: key(ctrl-l)
 (curser | cursor): key(cmd-d)
 sel flip: key(alt-a)
+go forward: key(ctrl-shift--)
+go back: key(ctrl--)
 go middle: key(alt-m)
 go top: key(alt-t)
 go bottom: key(alt-b)
+# definition: key(f12)
 toggle scope: key(cmd-shift-\)
+
 
 # debugger
 by bug: "byebug"
+quokka: "quokka"
 break next: key(fn-f10)
 break in: key(fn-f11)
 break out: key(fn-shift-f11)
 break big: key(fn-f5)
 break stop: key(shift-fn-f5)
 break restart: key(cmd-shift-fn-f5)
-show result: key(cmd-shift-u)
+
+toggle output: user.vscode("workbench.action.output.toggleOutput")
+toggle terminal: user.vscode("workbench.action.terminal.toggleTerminal")
+toggle detail search: user.vscode("workbench.action.search.toggleQueryDetails")
+
+# below key bindings are same for both search editor and normal file search 
+# hence we have not used command id here
+toggle match case: key(cmd-alt-c)
+toggle match word: key(cmd-alt-w)
+toggle match regex: key(cmd-alt-r)
+
 # code run without debugging
 code run: key(ctrl-alt-n)
 code stop: key(ctrl-alt-m)
+
+# ember
+ember relevant: key(cmd-shift-r)
+rails relevant: key(alt-r)
+bread crumb: key(cmd-shift-.) 
+# alt-left and alt-right - to navigate the bread crumbs
+
+command set up worker: "message = JSON.parse(JSON.stringify(message));"
+
+git blame: user.vscode("gitlens.toggleFileBlame")

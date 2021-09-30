@@ -1,9 +1,7 @@
 window (new|open): app.window_open()
 window next: app.window_next()
 window last: app.window_previous()
-window large: key(cmd-alt-=)
 window close: app.window_close()
-window quit: key(cmd-q)
 focus <user.running_applications>: user.switcher_focus(running_applications)
 running list: user.switcher_toggle_running()
 launch <user.launch_applications>: user.switcher_launch(launch_applications)
@@ -16,3 +14,8 @@ snap <user.running_applications> <user.window_snap_position>:
     user.snap_app(running_applications, window_snap_position)
 snap <user.running_applications> [screen] <number>:
     user.move_app_to_screen(running_applications, number)
+
+
+window quit: key(cmd-q)
+window large: key(cmd-alt-=)
+window fullscreen: key(cmd-ctrl-f)
