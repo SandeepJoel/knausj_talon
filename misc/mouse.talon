@@ -88,7 +88,7 @@ wheel left: mouse_scroll(0, -1800)
 wheel left here:
     user.mouse_move_center_active_window()
     mouse_scroll(0, -40)
-wheel tiny left: mouse_scroll(0, -100)
+wheel tiny left: mouse_scroll(0, -300)
 wheel tiny left here:
     user.mouse_move_center_active_window()
     mouse_scroll(0, -20)
@@ -96,7 +96,7 @@ wheel right: mouse_scroll(0, 1800)
 wheel right here:
     user.mouse_move_center_active_window()
     mouse_scroll(0, 40)
-wheel tiny right: mouse_scroll(0, 100)
+wheel tiny right: mouse_scroll(0, 300)
 wheel tiny right here:
     user.mouse_move_center_active_window()
     mouse_scroll(0, 20)

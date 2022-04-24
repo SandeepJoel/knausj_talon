@@ -72,8 +72,8 @@ hunt this: key(cmd-f)
 reveal: key(cmd-shift-p)
 salt log: key(cmd-alt-j)
 file hunt: key(cmd-p)
-google that: key(alt-q)
-youtube that: key(alt-s)
+google that: key(alt-g)
+youtube that: key(alt-y)
 add (curser | cursor): key(fn-f7)
 
 # debugger

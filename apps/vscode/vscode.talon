@@ -272,6 +272,8 @@ install local: user.vscode("workbench.extensions.action.installVSIX")
 file copy local: user.vscode("copyRelativeFilePath")
 close other tabs: user.vscode("workbench.action.closeOtherEditors")
 close all: user.vscode("workbench.action.closeAllEditors")
+close tabs to the right: user.vscode("workbench.action.closeEditorsToTheRight")
+close tabs to the left: user.vscode("workbench.action.closeEditorsToTheLeft")
 collapse files: user.vscode("workbench.files.action.collapseExplorerFolders") 
 clean that: key(cmd-alt-u)
 salt that: key(fn-f4)
@@ -287,14 +289,14 @@ comment: key(cmd-/)
 project: key(cmd-alt-p)
 add log: key(ctrl-alt-l)
 google that: key(ctrl-alt-g)
-tab (open | new): key(cmd-n)
+tab new: key(cmd-n)
 
 meta: key(alt-/)
 sel meta: key(alt-shift-/)
 sel top: key(ctrl-o)
 sel line: key(ctrl-l)
 (curser | cursor): key(cmd-d)
-sel flip: key(alt-a)
+sel flip: key(cmd-shift-\)
 go forward: key(ctrl-shift--)
 go back: key(ctrl--)
 go middle: key(alt-m)
@@ -316,7 +318,7 @@ break restart: key(cmd-shift-fn-f5)
 
 toggle output: user.vscode("workbench.action.output.toggleOutput")
 toggle terminal: user.vscode("workbench.action.terminal.toggleTerminal")
-toggle detail search: user.vscode("workbench.action.search.toggleQueryDetails")
+toggle search details: user.vscode("workbench.action.search.toggleQueryDetails")
 
 # below key bindings are same for both search editor and normal file search 
 # hence we have not used command id here
@@ -335,5 +337,5 @@ bread crumb: key(cmd-shift-.)
 # alt-left and alt-right - to navigate the bread crumbs
 
 command set up worker: "message = JSON.parse(JSON.stringify(message));"
-
 git blame: user.vscode("gitlens.toggleFileBlame")
+toggle wrapper: key(cmd-')

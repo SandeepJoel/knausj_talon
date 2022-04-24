@@ -28,10 +28,11 @@ shoot: key(tab)
 shoot back: key(shift-tab)
 del: key(enter)
 del back: key(shift-enter)
-hold space: key(space:down)
-release space: key(space:up)
 show menu: key(ctrl-fn-f2)
 show status: key(ctrl-fn-f8)
+# below vimac commands
+gustav: key(fn-f5)
+scroll mode: key(fn-f6)
 padding: 
 	insert("  ") 
 	key(left)

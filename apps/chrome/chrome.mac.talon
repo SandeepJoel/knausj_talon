@@ -110,3 +110,5 @@ chrome full page: key(alt-shift-g)
 # url
 path bootstrap: 'api/_/bootstrap/'
 path account: 'api/_/bootstrap/account/'
+
+query dev: "?dev=true"
