@@ -68,7 +68,7 @@ and app.exe: cmd.exe
 
 apps.windows_terminal = """
 os: windows
-and app.exe: WindowsTerminal.exe 
+and app.exe: WindowsTerminal.exe
 """
 
 mod.apps.windows_power_shell = """
@@ -76,3 +76,6 @@ os: windows
 and app.exe: powershell.exe
 """
 
+apps.vim = """
+win.title:/VIM/
+"""

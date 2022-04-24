@@ -32,7 +32,7 @@ empty escaped string:
 (inside parens | args):
 	insert("()")
 	key(left)
-inside (squares | list):
+inside (squares | square brackets | list):
 	insert("[]")
 	key(left)
 inside (bracket | braces):
@@ -41,12 +41,12 @@ inside (bracket | braces):
 inside percent:
 	insert("%%")
 	key(left)
-inside angle: 
-	insert("<>") 
+inside (quotes | string):
+	insert("''")
 	key(left)
-inside quotes:
-	insert('""')
-  key(left)
+inside (double quotes | dubquotes):
+    insert('""')
+	key(left)
 inside (graves | back ticks):
 	insert("``")
 	key(left)  
@@ -75,9 +75,15 @@ tag div:
   key(left)
   key(left)
   key(left)
+inside angle: 
+	insert("<>") 
+	key(left)
 angle that:
     text = edit.selected_text()
-    user.paste("<{text}>")    
+    user.paste("<{text}>")
+(square | square bracket) that:
+    text = edit.selected_text()
+    user.paste("[{text}]")
 (bracket | brace) that:
     text = edit.selected_text()
     user.paste("{{{text}}}")
@@ -88,6 +94,9 @@ percent that:
     text = edit.selected_text()
     user.paste("%{text}%")
 quote that:
+    text = edit.selected_text()
+    user.paste("'{text}'")
+(double quote | dubquote) that:
     text = edit.selected_text()
     user.paste('"{text}"')
 (grave | back tick) that:

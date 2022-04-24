@@ -40,10 +40,10 @@ go way down:
 
 go way up:
     edit.file_start()
-    
+
 go bottom:
     edit.file_end()
-    
+
 go top:
     edit.file_start()
 

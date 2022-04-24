@@ -12,8 +12,13 @@
 #word shell: "shell".
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
-north: key(pageup)
-saudi: key(pagedown)
+
+# north: key(pageup)
+# saudi: key(pagedown)
+zoom reset: edit.zoom_reset()
+scroll up: edit.page_up()
+scroll down: edit.page_down()
+
 copy that: edit.copy()
 cut that: edit.cut()
 paste that: edit.paste()
@@ -21,6 +26,7 @@ slap: edit.undo()
 reverse that: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
+
 spotlight: key(cmd-space)
 wipe: key(backspace)
 pull: key(fn-del)
@@ -36,9 +42,7 @@ scroll mode: key(fn-f6)
 padding: 
 	insert("  ") 
 	key(left)
-# 'slap:
-# 	edit.line_end()
-# 	key(enter)'
+# slap: edit.line_insert_down()
 unhide files: key(cmd-shift-.)
 email one: 'joeltheking00000001@gmail.com'
 email two: 'sandeep.joel@freshworks.com'

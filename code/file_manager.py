@@ -15,6 +15,25 @@ mod.tag("file_manager", desc="Tag for enabling generic file management commands"
 mod.list("file_manager_directories", desc="List of subdirectories for the current path")
 mod.list("file_manager_files", desc="List of files at the root of the current path")
 
+words_to_exclude = [
+    "and",
+    "zero",
+    "one",
+    "two",
+    "three",
+    "for",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "microsoft",
+    "windows",
+    "Windows",
+    "dot",
+    "exe",
+]
 
 setting_auto_show_pickers = mod.setting(
     "file_manager_auto_show_pickers",
@@ -52,48 +71,6 @@ current_file_page = current_folder_page = 1
 
 ctx.lists["self.file_manager_directories"] = []
 ctx.lists["self.file_manager_files"] = []
-
-directories_to_remap = {}
-user_path = os.path.expanduser("~")
-if app.platform == "windows":
-    is_windows = True
-    import ctypes
-
-    GetUserNameEx = ctypes.windll.secur32.GetUserNameExW
-    NameDisplay = 3
-
-    size = ctypes.pointer(ctypes.c_ulong(0))
-    GetUserNameEx(NameDisplay, None, size)
-
-    nameBuffer = ctypes.create_unicode_buffer(size.contents.value)
-    GetUserNameEx(NameDisplay, nameBuffer, size)
-    one_drive_path = os.path.expanduser(os.path.join("~", "OneDrive"))
-
-    # this is probably not the correct way to check for onedrive, quick and dirty
-    if os.path.isdir(os.path.expanduser(os.path.join("~", r"OneDrive\Desktop"))):
-        default_folder = os.path.join("~", "Desktop")
-
-        directories_to_remap = {
-            "Desktop": os.path.join(one_drive_path, "Desktop"),
-            "Documents": os.path.join(one_drive_path, "Documents"),
-            "Downloads": os.path.join(user_path, "Downloads"),
-            "Music": os.path.join(user_path, "Music"),
-            "OneDrive": one_drive_path,
-            "Pictures": os.path.join(one_drive_path, "Pictures"),
-            "Videos": os.path.join(user_path, "Videos"),
-        }
-    else:
-        # todo use expanduser for cross platform support
-        directories_to_remap = {
-            "Desktop": os.path.join(user_path, "Desktop"),
-            "Documents": os.path.join(user_path, "Documents"),
-            "Downloads": os.path.join(user_path, "Downloads"),
-            "Music": os.path.join(user_path, "Music"),
-            "OneDrive": one_drive_path,
-            "Pictures": os.path.join(user_path, "Pictures"),
-            "Videos": os.path.join(user_path, "Videos"),
-        }
-
 
 @mod.action_class
 class Actions:
@@ -158,16 +135,6 @@ class Actions:
             gui_files.hide()
             gui_folders.hide()
 
-    def file_manager_open_user_directory(path: str):
-        """expands and opens the user directory"""
-        # this functionality exists mostly for windows.
-        # since OneDrive does strange stuff...
-        if path in directories_to_remap:
-            path = directories_to_remap[path]
-
-        path = os.path.expanduser(os.path.join("~", path))
-        actions.user.file_manager_open_directory(path)
-
     def file_manager_get_directory_by_index(index: int) -> str:
         """Returns the requested directory for the imgui display by index"""
         index = (current_folder_page - 1) * setting_imgui_limit.get() + index
@@ -224,13 +191,6 @@ class Actions:
             gui_folders.show()
 
 
-pattern = re.compile(r"[A-Z][a-z]*|[a-z]+|\d")
-
-
-def create_spoken_forms(symbols, max_len=30):
-    return [" ".join(list(islice(pattern.findall(s), max_len))) for s in symbols]
-
-
 def is_dir(f):
     try:
         return f.is_dir()
@@ -253,9 +213,10 @@ def get_directory_map(current_path):
         )
         if is_dir(f)
     ]
-    # print(len(directories))
-    spoken_forms = create_spoken_forms(directories)
-    return dict(zip(spoken_forms, directories))
+    directories.sort(key=str.casefold)
+    return actions.user.create_spoken_forms_from_list(
+        directories, words_to_exclude=words_to_exclude
+    )
 
 
 def get_file_map(current_path):
@@ -266,9 +227,10 @@ def get_file_map(current_path):
         )
         if is_file(f)
     ]
-    # print(str(files))
-    spoken_forms = create_spoken_forms([p for p in files])
-    return dict(zip(spoken_forms, [f for f in files]))
+    files.sort(key=str.casefold)
+    return actions.user.create_spoken_forms_from_list(
+        files, words_to_exclude=words_to_exclude
+    )
 
 
 @imgui.open(y=10, x=900)
@@ -306,6 +268,10 @@ def gui_folders(gui: imgui.GUI):
 
     # if gui.button("Previous..."):
     #   actions.user.file_manager_previous_folder_page()
+
+    gui.spacer()
+    if gui.button("Manager close"):
+        actions.user.file_manager_hide_pickers()
 
 
 @imgui.open(y=10, x=1300)
@@ -358,10 +324,11 @@ def update_gui():
         gui_files.show()
 
 
-def update_lists():
+def update_lists(path=None):
     global folder_selections, file_selections, current_folder_page, current_file_page
     is_valid_path = False
-    path = actions.user.file_manager_current_path()
+    if not path:
+        path = actions.user.file_manager_current_path()
     directories = {}
     files = {}
     folder_selections = []
@@ -387,8 +354,11 @@ def update_lists():
     current_folder_page = current_file_page = 1
     ctx.lists["self.file_manager_directories"] = directories
     ctx.lists["self.file_manager_files"] = files
-    folder_selections = sorted(directories.values(), key=str.casefold)
-    file_selections = sorted(files.values(), key=str.casefold)
+
+    folder_selections = list(set(directories.values()))
+    folder_selections.sort(key=str.casefold)
+    file_selections = list(set(files.values()))
+    file_selections.sort(key=str.casefold)
 
     update_gui()
 
@@ -408,7 +378,7 @@ def win_event_handler(window):
         clear_lists()
     elif path:
         if cached_path != path:
-            update_lists()
+            update_lists(path)
     elif cached_path:
         clear_lists()
         actions.user.file_manager_hide_pickers()
@@ -424,4 +394,3 @@ def register_events():
 # prevent scary errors in the log by waiting for talon to be fully loaded
 # before registering the events
 app.register("ready", register_events)
-

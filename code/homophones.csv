@@ -48,7 +48,7 @@ axle,axel
 eyes,ayes
 bah,baa
 Babel,babble
-bad,bade
+bad,bade,bed
 bait,bate
 bald,balled,bawled
 bail,bale,baal
@@ -57,6 +57,7 @@ barred,bard
 baron,barren
 basil,basal
 base,bass
+baseline,bassline
 basis,bases
 basque,bask
 based,baste
@@ -100,7 +101,7 @@ brewed,brood
 browse,brows
 brute,brut
 build,billed
-bullion,bouillon
+bullion,bouillon,boolean
 boy,buoy
 burger,burgher
 borough,burrow,burro
@@ -151,6 +152,7 @@ complacent,complaisant
 complement,compliment
 conceded,conceited
 consonants,consonance
+consul,console,consol
 continents,continence
 coup,coo
 coulee,coolie
@@ -209,6 +211,7 @@ eve,eave
 exceed,accede
 except,accept
 exercise,exorcise
+end,and
 I'd,eyed
 faint,feint
 fair,fare
@@ -308,6 +311,7 @@ I'll,aisle,isle
 islet,eyelet
 its,it's
 jam,jamb
+json,jason
 jinx,jinks
 kernel,colonel
 nap,knap
@@ -375,7 +379,7 @@ mill,mil
 mince,mints
 mind,mined
 minor,miner
-Mrs.,misses
+Mrs,misses
 missile,missal
 missed,mist
 might,mite
@@ -612,6 +616,7 @@ wax,whacks
 way,weigh,whey
 we,wee
 where,wear,ware
+were,whir,we're
 whether,weather,wether
 we'd,weed
 week,weak
@@ -635,6 +640,7 @@ one,won
 want,wont
 would,wood
 war,wore
+ward,word
 world,whirled,whorled
 worn,warn
 rack,wrack
