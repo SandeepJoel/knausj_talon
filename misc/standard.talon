@@ -13,7 +13,7 @@
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
 north: key(pageup)
-southy: key(pagedown)
+saudi: key(pagedown)
 copy that: edit.copy()
 cut that: edit.cut()
 paste that: edit.paste()
@@ -50,3 +50,4 @@ mobile thomas: '9841875021'
 address joel: 'No. 51, 12 street, astalakshmi nagar, alapakkam, chennai 116'
 address thomas: '19, Valluavar street, Chinna Porur, Porur - 600116'
 auto thomas: 'TN85K2476'
+freshdesk password: 'Freshdesk@123'

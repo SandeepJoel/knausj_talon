@@ -1,7 +1,7 @@
 tag: browser
 -
 ^address$: browser.focus_address()
-go home: browser.go_home()
+# go home: browser.go_home()
 [go] forward: 
   key(esc)
   browser.go_forward()

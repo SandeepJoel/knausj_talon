@@ -34,8 +34,8 @@ action(browser.go_back):
 action(browser.go_forward):
 	key(cmd-right)
 	
-action(browser.go_home):
-	key(cmd-shift-h)
+# action(browser.go_home):
+# 	key(cmd-shift-h)
 
 action(browser.open_private_window):
 	key(cmd-shift-n)
@@ -102,7 +102,7 @@ link extensions shortcuts: "chrome://extensions/shortcuts"
 chrome dark reader: key(alt-shift-d)
 chrome fake filler: key(cmd-shift-d)
 chrome search: key(cmd-shift-a)
-chrome one tab: key(alt-shift-1)
+chrome one tab display: key(alt-shift-1)
 chrome one tab current: key(alt-shift-2)
 chrome sticky header: key(alt-shift-h)
 chrome full page: key(alt-shift-g)

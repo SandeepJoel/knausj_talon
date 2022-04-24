@@ -3,8 +3,8 @@ and tag: user.git
 -
 # Standard commands
 git: "git "
+git add space: "git add "
 git add patch: "git add . -p\n"
-git add: "git add "
 git add everything: "git add --all\n"
 git add interactive: "git add -i\n"
 git bisect: "git bisect "
@@ -34,7 +34,7 @@ git commit: "git commit\n"
 git commit amend: "git commit --amend\n"
 git commit no verify: "git commit -n\n"
 git diff (colour|color) words: "git diff --color-words "
-git diff: "git diff "
+git diff: "git diff\n"
 git diff no pager: " GIT_PAGER='' git diff "
 git diff cached: "git diff --cached\n"
 git diff check: "git diff --check"

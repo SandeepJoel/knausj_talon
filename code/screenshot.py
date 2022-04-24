@@ -11,7 +11,7 @@ if active_platform == "windows":
     if not os.path.isdir(default_folder):
         default_folder = os.path.join("~", "Desktop")
 elif active_platform == "mac":
-    default_folder = os.path.join("~", "Desktop")
+    default_folder = os.path.join("~", "Downloads", "screenshots")
 elif active_platform == "linux":
     default_folder = "~"
     default_command = "scrot -s"
