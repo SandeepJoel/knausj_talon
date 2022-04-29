@@ -26,7 +26,6 @@ focus (move | next): key(ctrl-`)
 grab left: key(shift-up)
 grab right: key(shift-down)
 add line: key(shift-enter)
-hunt this: key(cmd-f)
 (slack | lack) (slap | slaw | slapper): key(cmd-right shift-enter)
 (slack | lack) (react | reaction): key(cmd-shift-\)
 (insert command | commandify): key(cmd-shift-c)
@@ -49,7 +48,6 @@ bold: key(cmd-b)
 emote <user.text>: "{text}"
 toggle left sidebar: key(cmd-shift-d)
 toggle right sidebar: key(cmd-.)
-slackbot: "slackbot"
 
 # DEPRECATED
 (move | next) focus:

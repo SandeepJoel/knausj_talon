@@ -287,14 +287,7 @@ break stop: key(shift-fn-f5)
 break restart: key(cmd-shift-fn-f5)
 
 toggle output: user.vscode("workbench.action.output.toggleOutput")
-toggle terminal: user.vscode("workbench.action.terminal.toggleTerminal")
 toggle search details: user.vscode("workbench.action.search.toggleQueryDetails")
-
-# below key bindings are same for both search editor and normal file search 
-# hence we have not used command id here
-toggle match case: key(cmd-alt-c)
-toggle match word: key(cmd-alt-w)
-toggle match regex: key(cmd-alt-r)
 
 # code run without debugging
 code run: key(ctrl-alt-n)
@@ -309,3 +302,5 @@ bread crumb: key(cmd-shift-.)
 command set up worker: "message = JSON.parse(JSON.stringify(message));"
 git blame: user.vscode("gitlens.toggleFileBlame")
 toggle wrapper: key(cmd-')
+
+regex till new line: "(.|\\n)*"

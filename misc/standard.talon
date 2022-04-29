@@ -13,8 +13,8 @@
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
 
-# north: key(pageup)
-# saudi: key(pagedown)
+north: key(pageup)
+saudi: key(pagedown)
 zoom reset: edit.zoom_reset()
 scroll up: edit.page_up()
 scroll down: edit.page_down()
@@ -56,3 +56,32 @@ address joel: 'No. 51, 12 street, astalakshmi nagar, alapakkam, chennai 116'
 address thomas: '19, Valluavar street, Chinna Porur, Porur - 600116'
 auto thomas: 'TN85K2476'
 freshdesk password: 'Freshdesk@123'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+number aadhar: '732393621224'
+number pan: 'GWRPS2884F'
+joel password: 'sjUIjo001' 
+second password: 'aSynch53jo’
