@@ -3,7 +3,7 @@ from typing import Set
 from talon import Module, Context, actions, app
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near old pit quench red sun trap urge vest water plex yank zip".split(
+default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -136,8 +136,8 @@ punctuation_words = {
     "grave": "`",
     "comma": ",",
     "period": ".",
-    "semi": ";",
     "full stop": ".",
+    "semicolon": ";",
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",
@@ -180,10 +180,10 @@ symbol_key_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
-    # "brace": "{",
-    # "left brace": "{",
-    # "R brace": "}",
-    # "right brace": "}",
+    "brace": "{",
+    "left brace": "{",
+    "R brace": "}",
+    "right brace": "}",
     "angle": "<",
     "left angle": "<",
     "less than": "<",

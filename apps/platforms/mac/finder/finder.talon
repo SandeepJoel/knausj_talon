@@ -6,7 +6,7 @@ tag(): user.tabs
 preferences: key(cmd-,)
 options: key(cmd-j)
 search: key(cmd-alt-f)
-go folder: key(cmd-shift-g)
+
 # bit of a mouthful, but it's probably not the kind of thing you'd be saying frequently
 sort by none: key(ctrl-alt-cmd-0)
 sort by name: key(ctrl-alt-cmd-1)

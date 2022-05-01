@@ -1,27 +1,20 @@
 tag: browser
 -
-
-^address$: browser.focus_address()
-# address bar | go address | go url: browser.focus_address()
+address bar | go address | go url: browser.focus_address()
 address copy | url copy | copy address | copy url:
     browser.focus_address()
     sleep(50ms)
     edit.copy()
-# go home: browser.go_home()
-[go] forward: 
-  key(esc)
-  browser.go_forward()
-go (back | backward): 
-  key(esc)
-  browser.go_back()
+go home: browser.go_home()
+[go] forward: browser.go_forward()
+go (back | backward): browser.go_back()
 go to {user.website}: browser.go(website)
 go private: browser.open_private_window()
 
 bookmark it: browser.bookmark()
 bookmark tabs: browser.bookmark_tabs()
-
-(refresh | reload): browser.reload()
-(refresh | reload) hard: browser.reload_hard()
+(refresh | reload) it: browser.reload()
+(refresh | reload) it hard: browser.reload_hard()
 
 bookmark show: browser.bookmarks()
 bookmark bar [show]: browser.bookmarks_bar()
@@ -36,8 +29,6 @@ show downloads: browser.show_downloads()
 show extensions: browser.show_extensions()
 show history: browser.show_history()
 show cache: browser.show_clear_cache()
-
-inspect: key(cmd-shift-c)
 
 #todo - port to apps
 # navigating current page

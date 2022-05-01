@@ -7,7 +7,7 @@ manager refresh: user.file_manager_update_lists()
 go <user.system_path>: user.file_manager_open_directory(system_path)
 go back: user.file_manager_go_back()
 go forward: user.file_manager_go_forward()
-(go parent | daddy | go out): user.file_manager_open_parent()
+(go parent | daddy): user.file_manager_open_parent()
 ^follow numb <number_small>$:
     directory = user.file_manager_get_directory_by_index(number_small - 1)
     user.file_manager_open_directory(directory)
@@ -40,8 +40,3 @@ folder last: user.file_manager_previous_folder_page()
 
 file next: user.file_manager_next_file_page()
 file last: user.file_manager_previous_file_page()
-
-go desk: user.file_manager_open_user_directory("Desktop")
-go docks: user.file_manager_open_user_directory("Documents")
-go downloads: user.file_manager_open_user_directory("Downloads")
-go screenshot: user.file_manager_open_user_directory("Downloads/screenshots")
