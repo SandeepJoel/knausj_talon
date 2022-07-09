@@ -62,7 +62,6 @@ falcon-prestaging,falcon prestaging
 omnichannel, omni channel
 helpkit
 repo
-debug
 debugging
 redis
 end
@@ -92,7 +91,18 @@ above,hobo
 below,billow
 timezone,times on
 scrolling
-hello, hallo
-screenshot, screen short
-cursorless, cursor less
+hello,hallo
+screenshot,screen short
+cursorless,cursor less
+restart
+talon, talon
 svg
+what is,waters
+joel
+webpack, web pack
+account, a count
+pagination, page nation
+owner,warner
+debug,de book
+swat,swart
+markdown

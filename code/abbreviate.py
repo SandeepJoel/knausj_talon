@@ -215,6 +215,8 @@ abbreviations = {
     "web": "www",
     "what the fuck": "wtf",
     "window": "win",
+    "hypertext": "html",
+    "style sheet": "css"
 }
 
 ctx = Context()
