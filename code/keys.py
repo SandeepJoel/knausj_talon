@@ -198,7 +198,7 @@ symbol_key_words = {
     "hash": "#",
     "percent": "%",
     "caret": "^",
-    "amper": "&",
+    # "amper": "&",
     "pipe": "|",
     "dubquote": '"',
     "double quote": '"',
