@@ -2,7 +2,7 @@ control mouse: user.mouse_toggle_control_mouse()
 zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()
-touch:
+duke:
     mouse_click(0)
     # close the mouse grid if open
     user.grid_close()
@@ -39,7 +39,7 @@ mid click:
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-(dub click | duke):
+dub click:
     mouse_click()
     mouse_click()
     # close the mouse grid
