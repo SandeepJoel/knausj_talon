@@ -1,7 +1,9 @@
 double dash: "--"
+double dot: .."
 triple quote: "'''"
 (triple grave | triple back tick | gravy): insert("```")
 (dot dot | dotdot): ".."
+(triple dot): "..."
 ellipses: "..."
 (comma and | spamma): ", "
 arrow: "->"
