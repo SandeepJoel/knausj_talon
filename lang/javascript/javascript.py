@@ -36,12 +36,13 @@ ctx.lists["user.code_common_member_function"] = {
     "map": "map",
     "pop": "pop",
     "push": "push",
-    "reduce": "reduce",
     "slice": "slice",
     "some": "some",
     "split": "split",
     "substring": "substring",
     "then": "then",
+    "every": "every",
+    "any": "any",
 }
 
 ctx.lists["user.code_keyword"] = {
@@ -69,6 +70,21 @@ ctx.lists["user.code_keyword"] = {
     "undefined": "undefined",
     "yield": "yield ",
 }
+
+# mod.list(
+#     "code_common_member_function_with_lambda",
+#     "Function to use in a dotted chain that expects a lambda, eg .foo(() => ())",
+# )
+
+# ctx.lists["user.code_common_member_function_with_lambda"] = {
+#     "filter": "filter",
+#     "find": "find",
+#     "flat map": "flatMap",
+#     "for each": "forEach",
+#     "map": "map",
+#     "some": "some",
+#     "then": "then",
+# }
 
 
 @ctx.action_class("user")

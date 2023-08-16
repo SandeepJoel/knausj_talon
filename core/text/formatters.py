@@ -106,6 +106,10 @@ formatters_dict = {
         first_vs_rest(lambda w: w.lower(), lambda w: w.capitalize()),
     ),
     "PUBLIC_CAMEL_CASE": (NOSEP, every_word(lambda w: w.capitalize())),
+    "SNAKE_ALL_CAPS": (
+        NOSEP,
+        first_vs_rest(lambda w: w.upper(), lambda w: "_" + w.upper()),
+    ),
     "SNAKE_CASE": (
         NOSEP,
         first_vs_rest(lambda w: w.lower(), lambda w: "_" + w.lower()),
@@ -156,7 +160,8 @@ formatters_words = {
     "snake": formatters_dict["SNAKE_CASE"],
     "string": formatters_dict["SINGLE_QUOTED_STRING"],
     "title": formatters_dict["CAPITALIZE_ALL_WORDS"],
-    "connect string": formatters_dict["QUOTED_LIST"]
+    "connect string": formatters_dict["QUOTED_LIST"],
+    "constant": formatters_dict["SNAKE_ALL_CAPS"]
 }
 
 all_formatters = {}
