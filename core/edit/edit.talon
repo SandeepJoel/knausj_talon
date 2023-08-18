@@ -183,5 +183,5 @@ undo that: edit.undo()
 redo that: edit.redo()
 
 # Save
-disk: edit.save()
+fileit: edit.save()
 file save all: edit.save_all()
