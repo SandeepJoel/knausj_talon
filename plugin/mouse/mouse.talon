@@ -3,7 +3,7 @@ control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()
 camera overlay: tracking.control_debug_toggle()
 run calibration: tracking.calibrate()
-touch:
+duke:
     # close zoom if open
     user.zoom_close()
     mouse_click(0)
@@ -50,9 +50,7 @@ mid click:
     key("{modifiers}:up")
     # close the mouse grid
     user.grid_close()
-(dub click | duke):
-    # close zoom if open
-    user.zoom_close()
+dub click:
     mouse_click()
     mouse_click()
     # close the mouse grid

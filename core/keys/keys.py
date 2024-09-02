@@ -140,6 +140,7 @@ punctuation_words = {
     "number sign": "#",
     "percent sign": "%",
     "at sign": "@",
+    "at the rate of": "@",
     "and sign": "&",
     "ampersand": "&",
     # Currencies
@@ -154,7 +155,7 @@ punctuation_words = {
 symbol_key_words = {
     "dot": ".",
     "point": ".",
-    "quote": "'",
+    "single quote": "'",
     "question": "?",
     "apostrophe": "'",
     "L square": "[",
@@ -199,7 +200,7 @@ symbol_key_words = {
     "hash": "#",
     "percent": "%",
     "caret": "^",
-    "amper": "&",
+    # "amper": "&",
     "pipe": "|",
     "dub quote": '"',
     "double quote": '"',
