@@ -3,6 +3,7 @@ This module gives us the list {user.system_paths} and the capture <user.system_p
 the list to easily refer to system paths in talon and python files. It also creates a file
 system_paths.csv in the settings folder so they user can easily add their own custom paths.
 """
+
 import os
 
 from talon import Context, Module, actions, app
@@ -49,11 +50,7 @@ def on_ready():
 
             default_system_paths.update(onedrive_paths)
 
-    system_paths = get_list_from_csv(
-        "system_paths.csv", headers=("Path", "Spoken"), default=default_system_paths
-    )
-
-    ctx.lists["user.system_paths"] = system_paths
+    ctx.lists["user.system_paths"] = default_system_paths
 
 
 @mod.capture(rule="{user.system_paths}")

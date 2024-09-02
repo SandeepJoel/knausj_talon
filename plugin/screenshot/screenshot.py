@@ -2,17 +2,19 @@ import os
 from datetime import datetime
 from typing import Optional
 
-from talon import Context, Module, actions, app, clip, cron, screen, ui
+from talon import Context, Module, actions, app, clip, cron, screen, settings, ui
 from talon.canvas import Canvas
 
 mod = Module()
+
+mod.tag("screenshot_disabled", desc="Activating this tag disables screenshot commands")
 
 default_folder = ""
 if app.platform == "windows":
     default_folder = os.path.expanduser(os.path.join("~", r"OneDrive\\Pictures"))
 if not os.path.isdir(default_folder):
     default_folder = os.path.join("~", "Pictures")
-default_folder = os.path.join("~", "Downloads", "screenshots")
+default_folder = os.path.join("~", "Desktop", "screenshots")
 screenshot_folder = mod.setting(
     "screenshot_folder",
     type=str,
@@ -82,7 +84,7 @@ def get_screenshot_path(title: str = ""):
         title = f" - {title.replace('.', '_')}"
     date = datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
     filename = f"Screenshot {date}{title}.png"
-    folder_path = screenshot_folder.get()
+    folder_path = settings.get("user.screenshot_folder")
     path = os.path.expanduser(os.path.join(folder_path, filename))
     return os.path.normpath(path)
 
