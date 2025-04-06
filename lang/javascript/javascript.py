@@ -41,12 +41,13 @@ ctx.lists["user.code_common_member_function"] = {
     "map": "map",
     "pop": "pop",
     "push": "push",
-    "reduce": "reduce",
     "slice": "slice",
     "some": "some",
     "split": "split",
     "substring": "substring",
     "then": "then",
+    "every": "every",
+    "any": "any",
 }
 
 ctx.lists["user.code_keyword"] = {
