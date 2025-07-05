@@ -83,7 +83,7 @@ symbols = [
     Symbol(">", None, ["rangle", "R angle", "right angle", "greater than"]),
     Symbol("^", None, ["caret"]),
     Symbol("|", None, ["pipe"]),
-    Symbol("'", None, ["quote", "apostrophe"]),
+    Symbol("'", None, ["apostrophe"]),
     Symbol('"', None, ["dub quote", "double quote"]),
 ]
 
