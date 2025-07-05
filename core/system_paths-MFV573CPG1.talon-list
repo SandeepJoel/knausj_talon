@@ -1,0 +1,16 @@
+list: user.system_paths
+hostname: MFV573CPG1
+-
+user: /Users/ajoel
+desktop: /Users/ajoel/Desktop
+desk: /Users/ajoel/Desktop
+documents: /Users/ajoel/Documents
+docks: /Users/ajoel/Documents
+downloads: /Users/ajoel/Downloads
+music: /Users/ajoel/Music
+pictures: /Users/ajoel/Pictures
+videos: /Users/ajoel/Videos
+talon home: /Users/ajoel/.talon
+talon recordings: /Users/ajoel/.talon/recordings
+talon user: /Users/ajoel/.talon/user
+home: /Users/ajoel
