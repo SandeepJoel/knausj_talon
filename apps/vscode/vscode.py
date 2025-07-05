@@ -3,6 +3,7 @@ from talon import Context, Module, actions, app
 is_mac = app.platform == "mac"
 
 ctx = Context()
+ctx_editor = Context()
 mac_ctx = Context()
 mod = Module()
 # com.todesktop.230313mzl4w4u92 is for Cursor - https://www.cursor.com/
@@ -13,6 +14,8 @@ os: mac
 and app.bundle: com.microsoft.VSCodeInsiders
 os: mac
 and app.bundle: com.vscodium
+os: mac
+and app.bundle: co.posit.positron
 os: mac
 and app.bundle: com.visualstudio.code.oss
 os: mac
@@ -31,6 +34,8 @@ os: linux
 and app.name: Codium
 os: linux
 and app.name: Cursor
+os: linux
+and app.name: Positron
 """
 mod.apps.vscode = r"""
 os: windows
@@ -55,10 +60,16 @@ os: windows
 and app.exe: positron.exe
 os: windows
 and app.exe: /^cursor\.exe$/i
+os: windows
+and app.exe: /^positron\.exe$/i
 """
 
 ctx.matches = r"""
 app: vscode
+"""
+ctx_editor.matches = r"""
+app: vscode
+and win.title: /focus:\[Text Editor\]/
 """
 mac_ctx.matches = r"""
 os: mac
@@ -96,6 +107,32 @@ class CodeActions:
     # talon code actions
     def toggle_comment():
         actions.user.vscode("editor.action.commentLine")
+
+
+# In the editor, use RPC commands to avoid conflicting with the editor's keybindings.
+# Only do this for editor, so that e.g. modal windows can still be pasted into with
+# ctrl-v.
+@ctx_editor.action_class("edit")
+class EditActions:
+    def undo():
+        actions.user.vscode("undo")
+
+    def redo():
+        actions.user.vscode("redo")
+
+    def copy():
+        actions.user.vscode("editor.action.clipboardCopyAction")
+
+    def paste():
+        actions.user.vscode("editor.action.clipboardPasteAction")
+
+    def find(text: str = None):
+        if text:
+            actions.user.run_rpc_command(
+                "editor.actions.findWithArgs", {"searchString": text}
+            )
+        else:
+            actions.user.vscode("actions.find")
 
 
 @ctx.action_class("edit")
@@ -210,7 +247,7 @@ class UserActions:
         actions.user.vscode("workbench.action.focusLeftGroup")
 
     def split_next():
-        actions.user.vscode_and_wait("workbench.action.focusRightGroup")
+        actions.user.vscode("workbench.action.focusRightGroup")
 
     def split_window_down():
         actions.user.vscode("workbench.action.moveEditorToBelowGroup")
@@ -394,3 +431,6 @@ class UserActions:
 
     def insert_snippet(body: str):
         actions.user.run_rpc_command("editor.action.insertSnippet", {"snippet": body})
+
+    def move_cursor_to_next_snippet_stop():
+        actions.user.vscode("jumpToNextSnippetPlaceholder")
