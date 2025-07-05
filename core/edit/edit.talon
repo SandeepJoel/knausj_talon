@@ -65,7 +65,7 @@ clone line: edit.line_clone()
 
 # Insert new line
 new line above: edit.line_insert_up()
-new line below | slap: edit.line_insert_down()
+new line below: edit.line_insert_down()
 
 # Insert padding with optional symbols
 padding: user.insert_between(" ", " ")
@@ -79,7 +79,7 @@ undo that: edit.undo()
 redo that: edit.redo()
 
 # Save
-file save: edit.save()
+fileit: edit.save()
 file save all: edit.save_all()
 
 [go] line mid: user.line_middle()

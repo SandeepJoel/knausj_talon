@@ -8,3 +8,9 @@ hunt this (pace | paste):
 hunt this <user.text>: edit.find(text)
 hunt next: edit.find_next()
 hunt previous: edit.find_previous()
+
+hunt select:
+  text = edit.selected_text()
+  edit.find()
+  sleep(25ms)
+  insert(text)
