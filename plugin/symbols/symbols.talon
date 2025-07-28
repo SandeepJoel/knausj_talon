@@ -1,6 +1,6 @@
 new line: "\n"
 double dash: "--"
-double dot: .."
+double dot: ".."
 triple quote: "'''"
 triple grave | triple back tick | gravy: "```"
 (dot dot | dotdot): ".."

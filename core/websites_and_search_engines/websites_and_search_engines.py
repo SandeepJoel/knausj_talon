@@ -1,7 +1,7 @@
 import webbrowser
 from urllib.parse import quote_plus
 
-from talon import Context, Module
+from talon import Context, Module, actions
 
 mod = Module()
 mod.list("website", desc="A website.")
@@ -22,10 +22,17 @@ class Actions:
         """Visit the given URL."""
         webbrowser.open(url)
 
+    def open_url_next_to_current(url: str):
+        """Visit the given URL."""
+        actions.key("cmd-t")
+        actions.sleep("100ms")
+        actions.insert(url)
+        actions.key("enter")
+
     def search_with_search_engine(search_template: str, search_text: str):
         """Search a search engine for given text"""
         url = search_template.replace("%s", quote_plus(search_text))
-        webbrowser.open(url)
+        actions.user.open_url_next_to_current(url)
 
 
 @ctx_browser.capture("user.address", rule="{user.website}")
