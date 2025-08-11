@@ -7,3 +7,4 @@ scholar: https://scholar.google.com/scholar?q=%s
 wiki: https://en.wikipedia.org/w/index.php?search=%s
 jenkins: https://jenkins.svc.aws.gartner.com/search/?q=%s
 cloudbees: https://jenkinsoc.cloudshared.aws.gartner.com/pdo-gcom-engmt-mc/search/?q=%s
+youtube: https://www.youtube.com/results?search_query=%s

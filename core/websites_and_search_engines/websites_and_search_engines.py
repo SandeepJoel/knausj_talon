@@ -24,6 +24,8 @@ class Actions:
 
     def open_url_next_to_current(url: str):
         """Visit the given URL."""
+        app = actions.user.get_running_app("Chrome")
+        actions.user.switcher_focus_app(app)
         actions.key("cmd-t")
         actions.sleep("100ms")
         actions.insert(url)
