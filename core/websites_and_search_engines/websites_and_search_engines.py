@@ -20,7 +20,8 @@ tag: browser
 class Actions:
     def open_url(url: str):
         """Visit the given URL."""
-        webbrowser.open(url)
+        # webbrowser.open(url)
+        actions.user.open_url_next_to_current(url)
 
     def open_url_next_to_current(url: str):
         """Visit the given URL."""
