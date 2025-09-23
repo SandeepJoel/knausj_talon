@@ -30,3 +30,7 @@ not tag: user.deep_sleep
 #     user.talon_mode()
 
 ^talon wake [<phrase>]$: speech.enable()
+^travis talk: key(alt-shift-v)
+^travis bye:
+    key(escape)
+    key(alt-a)
