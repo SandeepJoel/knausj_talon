@@ -43,6 +43,24 @@ $1.insertionFormatter: PRIVATE_CAMEL_CASE
 const $1 = $0;
 ---
 
+name: constAssignmentArray
+phrase: const array
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = [$0];
+---
+
+name: constAssignmentObject
+phrase: const object
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = { $0 };
+---
+
 name: letAssignment
 phrase: let
 insertionScope: statement
@@ -50,4 +68,22 @@ insertionScope: statement
 $1.insertionFormatter: PRIVATE_CAMEL_CASE
 -
 let $1 = $0;
+---
+
+name: letAssignmentArray
+phrase: let array
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+let $1 = [$0];
+---
+
+name: letAssignmentObject
+phrase: let object
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+let $1 = { $0 };
 ---

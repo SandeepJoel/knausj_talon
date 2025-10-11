@@ -55,5 +55,6 @@ state filter: app.notify('ERROR: Command deprecated; please use "dot filter"')
 state reduce: app.notify('ERROR: Command deprecated; please use "dot reduce"')
 
 state spread: "..."
+state call: "()"
 
 from import: user.insert_between(' from  "', '"')

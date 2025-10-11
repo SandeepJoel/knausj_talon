@@ -126,6 +126,7 @@ operators = Operators(
     MATH_MULTIPLY=" * ",
     MATH_DIVIDE=" / ",
     ASSIGNMENT=" = ",
+    BITWISE_OR=" | ",
 )
 
 
