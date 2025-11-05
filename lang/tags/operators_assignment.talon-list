@@ -3,7 +3,7 @@ tag: user.code_operators_assignment
 -
 
 # Assignment
-(equals | assign): ASSIGNMENT
+assign: ASSIGNMENT
 or equals: ASSIGNMENT_OR
 
 # Combined computation and assignment

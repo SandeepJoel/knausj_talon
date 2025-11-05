@@ -44,7 +44,7 @@ const $1 = $0;
 ---
 
 name: constAssignmentArray
-phrase: const array
+phrase: const list
 insertionScope: statement
 
 $1.insertionFormatter: PRIVATE_CAMEL_CASE
@@ -71,7 +71,7 @@ let $1 = $0;
 ---
 
 name: letAssignmentArray
-phrase: let array
+phrase: let list
 insertionScope: statement
 
 $1.insertionFormatter: PRIVATE_CAMEL_CASE
@@ -86,4 +86,13 @@ insertionScope: statement
 $1.insertionFormatter: PRIVATE_CAMEL_CASE
 -
 let $1 = { $0 };
+---
+
+name: newPromise
+phrase: new promise
+insertionScope: statement
+-
+new Promise((resolve, reject) => {
+    $0
+});
 ---
