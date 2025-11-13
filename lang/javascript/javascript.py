@@ -41,6 +41,7 @@ ctx.lists["user.code_common_method"] = {
     "to string": "toString",
     "value of": "valueOf",
     "to locale string": "toLocaleString",
+    'prevent default': 'preventDefault',
     "fill": "fill",
     "copy within": "copyWithin",
     "find index": "findIndex",

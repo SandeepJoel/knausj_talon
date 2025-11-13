@@ -61,6 +61,24 @@ $1.insertionFormatter: PRIVATE_CAMEL_CASE
 const $1 = { $0 };
 ---
 
+name: constAssignmentMap
+phrase: const map
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = new Map([$0]);
+---
+
+name: constAssignmentSet
+phrase: const set
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = new Set([$0]);
+---
+
 name: letAssignment
 phrase: let
 insertionScope: statement
