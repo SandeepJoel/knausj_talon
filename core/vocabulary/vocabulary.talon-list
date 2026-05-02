@@ -1,6 +1,9 @@
 list: user.vocabulary
 -
-rereview: re-review
+
+N map: nmap
+under documented: under-documented
+nmap
 admin
 URL
 API
@@ -18,7 +21,7 @@ sandy: Sandeep
 sun deep: Sandeep
 fresh disk: freshdesk
 fresh works: freshworks
-fresh connect: freshconnect
+
 gemmell: gmail
 fresh release: freshrelease
 divine: dev
@@ -120,8 +123,7 @@ swat cats: swatkats
 form serve: formserv
 Yamal: Yaml
 help disk: helpdesk
-fresh chat: freshchat
-fresh collar: freshcaller
+
 react jay yes: react js
 joint jay yes: joint js
 with Jet: widget
