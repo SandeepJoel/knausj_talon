@@ -136,4 +136,5 @@ de bugger: debugger
 Gardner: Gartner
 ta ta: tata
 reddit
-artifactory
+artifactory,
+svelte
