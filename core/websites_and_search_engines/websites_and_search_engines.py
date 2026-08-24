@@ -1,7 +1,7 @@
 import webbrowser
 from urllib.parse import quote_plus
 
-from talon import Context, Module
+from talon import Context, Module, actions
 
 mod = Module()
 mod.list("website", desc="A website.")
@@ -20,12 +20,23 @@ tag: browser
 class Actions:
     def open_url(url: str):
         """Visit the given URL."""
-        webbrowser.open(url)
+        # webbrowser.open(url)
+        actions.user.open_url_next_to_current(url)
+
+    def open_url_next_to_current(url: str):
+        """Visit the given URL."""
+        # TODO: NEED TO MAKE THE BELOW LINE BROWSER AGNOSTIC
+        app = actions.user.get_running_app("Chrome")
+        actions.user.switcher_focus_app(app)
+        actions.key("cmd-t")
+        actions.sleep("100ms")
+        actions.insert(url)
+        actions.key("enter")
 
     def search_with_search_engine(search_template: str, search_text: str):
         """Search a search engine for given text"""
         url = search_template.replace("%s", quote_plus(search_text))
-        webbrowser.open(url)
+        actions.user.open_url_next_to_current(url)
 
 
 @ctx_browser.capture("user.address", rule="{user.website}")

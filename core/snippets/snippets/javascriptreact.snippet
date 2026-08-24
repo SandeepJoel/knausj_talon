@@ -2,6 +2,7 @@ language: javascript | javascriptreact | typescriptreact
 ---
 
 name: attribute
+phrase: attribute
 -
 $name={$0}
 ---
@@ -27,4 +28,33 @@ insertionScope: statement
 useEffect(() => {
     $0
 }, []);
+---
+
+name: reactUseMemo
+phrase: use memo
+insertionScope: statement
+-
+const $1 = useMemo(() => $0, [$2]);
+---
+
+name: reactUseCallback
+phrase: use callback
+insertionScope: statement
+-
+const $1 = useCallback(() => {
+    $0
+}, [$2]);
+---
+
+name: reactFunctionalComponent
+phrase: component
+insertionScope: statement
+-
+function $1(props) {
+    return (
+        <>
+            $0
+        </>
+    );
+}
 ---

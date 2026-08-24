@@ -43,6 +43,42 @@ $1.insertionFormatter: PRIVATE_CAMEL_CASE
 const $1 = $0;
 ---
 
+name: constAssignmentArray
+phrase: const list
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = [$0];
+---
+
+name: constAssignmentObject
+phrase: const object
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = { $0 };
+---
+
+name: constAssignmentMap
+phrase: const map
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = new Map([$0]);
+---
+
+name: constAssignmentSet
+phrase: const set
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+const $1 = new Set([$0]);
+---
+
 name: letAssignment
 phrase: let
 insertionScope: statement
@@ -50,4 +86,31 @@ insertionScope: statement
 $1.insertionFormatter: PRIVATE_CAMEL_CASE
 -
 let $1 = $0;
+---
+
+name: letAssignmentArray
+phrase: let list
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+let $1 = [$0];
+---
+
+name: letAssignmentObject
+phrase: let object
+insertionScope: statement
+
+$1.insertionFormatter: PRIVATE_CAMEL_CASE
+-
+let $1 = { $0 };
+---
+
+name: newPromise
+phrase: new promise
+insertionScope: statement
+-
+new Promise((resolve, reject) => {
+    $0
+});
 ---

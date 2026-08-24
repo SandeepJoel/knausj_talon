@@ -22,7 +22,9 @@ settings():
     # user.help_sort_contexts_by_specificity = false
 
     # Set the scroll amount for continuous scroll
-    user.mouse_continuous_scroll_amount = 8
+    user.mouse_continuous_scroll_amount = 30
+
+    user.ocr_behavior_when_no_eye_tracker = "ACTIVE_WINDOW"
 
     # Set the scroll multiplier for gaze scroll
     user.mouse_gaze_scroll_speed_multiplier = 1.0
@@ -86,7 +88,7 @@ settings():
 
     # Uncomment to insert text longer than 10 characters (customizable) by pasting from
     # the clipboard. This is often faster than typing.
-    # user.paste_to_insert_threshold = 10
+    user.paste_to_insert_threshold = 60
 
     # Uncomment to enable context-sensitive dictation. This determines how to format
     # (capitalize, space) dictation-mode speech by selecting & copying surrounding text
